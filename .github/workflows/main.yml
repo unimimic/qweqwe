@@ -1,5 +1,8 @@
 name: Build and Deploy
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -16,6 +19,7 @@ jobs:
         run: |
           npm install
           npm run build
+          
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
